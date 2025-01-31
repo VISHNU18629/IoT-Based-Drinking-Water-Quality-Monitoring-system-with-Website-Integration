@@ -1,0 +1,202 @@
+<% layout("/layouts/boilerplate") %> <%= success %>
+  
+    <h3>All Listings</h3>
+    <!-- <form method="GET" action="/listings/new">
+        <button>Create New Listing</button>
+      </form> -->
+
+     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+  <!-- First Card -->
+  <div class="col">
+    <a href="/listings/<%= allListings[5]._id %>" class="listing-link">
+      <div class="card listing-card">
+        <img src="/images/5.jpg" class="card-img-top" alt="listing_image" style="height: 20rem"/>
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+          
+          <b><p class="card-text"><%= allListings[5].title %></p></b>
+        </div>
+      </div>
+    </a>
+  </div>
+
+   <!-- Second Card -->
+  <div class="col ">
+    <a href="/listings/<%= allListings[4]._id %>" class="listing-link">
+      <div class="card listing-card">
+        <img src="/images/4.jpg" class="card-img-top" alt="listing_image" style="height: 20rem;">
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+          <b><P class="card-text"><%= allListings[4].title %></P></b>
+      
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col">
+    <a href="/listings/<%= allListings[0]._id %>" class="listing-link">
+      <div class="card listing-card">
+        <img src="/images/0.jpg" class="card-img-top" alt="listing_image" style="height: 20rem;">
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+        
+          <b><p class="card-text"><%= allListings[0].title %></p></b>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="col">
+    <a href="/listings/<%= allListings[1]._id %>" class="listing-link">
+      <div class="card listing-card">
+        <img src="/images/1.jpg" class="card-img-top" alt="listing_image" style="height: 20rem;">
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+          
+         <b><p class="card-text"><%= allListings[1].title %></p></b>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="col">
+    <a href="/listings/<%= allListings[3]._id %>" class="listing-link">
+      <div class="card listing-card">
+        <img src="/images/3.jpg" class="card-img-top" alt="listing_image" style="height: 20rem;">
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+          
+          <b><p class="card-text"><%= allListings[3].title %></p></b>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="col">
+    <a href="/listings/<%= allListings[6]._id %>" class="listing-link">
+      <div class="card listing-card">
+        <img src="/images/6.jpg" class="card-img-top" alt="listing_image" style="height: 20rem;">
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+    
+          <b><p class="card-text"><%= allListings[6].title %></p></b>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="col">
+    <a href="/listings/<%= allListings[7]._id %>" class="listing-link">
+      <div class="card listing-card">
+        <img src="/images/7.jpg" class="card-img-top" alt="listing_image" style="height: 20rem"/>
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+          <b><p class="card-text"><%= allListings[7].title %></p></b>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col">
+    <a href="/listings/<%= allListings[8]._id %>" class="listing-link">
+      <div class="card listing-card">
+        <img src="/images/8.jpg" class="card-img-top" alt="listing_image" style="height: 20rem"/>
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+          <b><p class="card-text"><%= allListings[8].title %></p></b>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col">
+    <a href="/listings/<%= allListings[9]._id %>" class="listing-link">
+      <div class="card listing-card">
+        <img src="/images/9.jpg" class="card-img-top" alt="listing_image" style="height: 20rem"/>
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+          <b><p class="card-text"><%= allListings[9].title %></p></b>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col">
+    <a href="/listings/<%= allListings[10]._id %>" class="listing-link">
+      <div class="card listing-card">
+        <img src="/images/10.jpg" class="card-img-top" alt="listing_image" style="height: 20rem"/>
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+          <b><p class="card-text"><%= allListings[10].title %></p></b>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col">
+    <a href="/listings/<%= allListings[11]._id %>" class="listing-link">
+      <div class="card listing-card">
+        <img src="/images/11.jpg" class="card-img-top" alt="listing_image" style="height: 20rem"/>
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+          <b><p class="card-text"><%= allListings[11].title %></p></b>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col">
+    <a href="/listings/<%= allListings[12]._id %>" class="listing-link">
+      <div class="card listing-card">
+        <img src="/images/12.jpg" class="card-img-top" alt="listing_image" style="height: 20rem"/>
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+          <b><p class="card-text"><%= allListings[12].title %></p></b>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col">
+    <a href="/listings/<%= allListings[13]._id %>" class="listing-link">
+      <div class="card listing-card">
+        <img src="/images/13.jpg" class="card-img-top" alt="listing_image" style="height: 20rem"/>
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+          <b><p class="card-text"><%= allListings[13].title %></p></b>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col">
+    <a href="/listings/<%= allListings[14]._id %>" class="listing-link">
+      <div class="card listing-card">
+        <img src="/images/14.jpg" class="card-img-top" alt="listing_image" style="height: 20rem"/>
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+          <b><p class="card-text"><%= allListings[14].title %></p></b>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col">
+    <a href="/listings/<%= allListings[15]._id %>" class="listing-link">
+      <div class="card listing-card">
+        <img src="/images/15.jpg" class="card-img-top" alt="listing_image" style="height: 20rem"/>
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+          <b><p class="card-text"><%= allListings[15].title %></p></b>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  
+  
+  
+  </div>
+
+
+
+    
+
+
