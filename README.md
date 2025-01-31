@@ -5,7 +5,7 @@ This project addresses critical issues such as **water scarcity**, **water conta
 
 ---
 
-![My Image](website/resource/image.jpg)
+![My Image](Website/uploads/image.jpg)
 
 
 ### **Features**
