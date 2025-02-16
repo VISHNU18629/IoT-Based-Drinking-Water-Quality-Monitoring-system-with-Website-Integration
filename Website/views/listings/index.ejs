@@ -1,11 +1,178 @@
 <% layout("/layouts/boilerplate") %> <%= success %>
-  
-    <h3>All Listings</h3>
+<!--   
+    <h3>All Listings</h3> -->
     <!-- <form method="GET" action="/listings/new">
         <button>Create New Listing</button>
       </form> -->
 
-     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+      <style>
+
+        .water-alert {
+          background-color: rgba(255, 0, 0, 0.1);
+          color: red;
+          font-weight: bold;
+          padding: 3px 8px;
+          border-radius: 5px;
+          font-size: 12px;
+          display: none;
+      
+        }
+
+
+       #filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center align icons */
+    gap: 0.8rem; /* Spacing between icons */
+    align-items:  center;
+}
+
+.filter {
+    width: 70px; /* Uniform width for all icons */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    transition: all 0.3s ease-in-out;
+    opacity: 0.8;
+    margin-top: 2rem;
+}
+
+.filter:hover {
+    opacity: 1;
+    cursor: pointer;
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.filter i {
+    font-size: 20px; /* Slightly larger for better visibility */
+
+    transition: color 0.3s ease-in-out;
+}
+
+.filter:hover i {
+    color: black; /* Slightly darker blue on hover */
+}
+
+.filter p {
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    word-wrap: break-word;
+    white-space: normal; /* Allows text to wrap properly */
+    line-height: 1.1; /* Improve spacing between lines */
+}
+
+/* Adjusting text layout for long names */
+.filter p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.contaminated {
+  border: 1px solid black;
+  border-radius: 1rem;
+  height:  3.25rem;
+  padding: 0.5rem;
+  margin-left: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+</style>
+
+      <div id="filters">
+        <div class="filter">
+          <div><i class="fa fa-water"></i></div>
+          <p>Rivers</p>
+      </div>
+      
+      <div class="filter">
+          <div><i class="fa fa-water-ladder"></i></div>
+          <p>Lakes</p>
+      </div>
+      
+      <div class="filter">
+          <div><i class="fa fa-droplet"></i></div>
+          <p>Ponds</p>
+      </div>
+      
+      <div class="filter">
+          <div><i class="fa fa-faucet"></i></div>
+          <p>Wells</p>
+      </div>
+      
+      <div class="filter">
+          <div><i class="fa fa-glass-water"></i></div>
+          <p>Drinking<br>Water</p>
+      </div>
+      
+      <div class="filter">
+          <div><i class="fa fa-skull-crossbones"></i></div>
+          <p>Contaminated<br>Sites</p>
+      </div>
+      
+      <div class="filter">
+          <div><i class="fa fa-shield-heart"></i></div>
+          <p>Safe<br>Water</p>
+      </div>
+      
+      <div class="filter">
+          <div><i class="fa fa-satellite-dish"></i></div>
+          <p>Real-time<br>Monitoring</p>
+      </div>
+      
+      <div class="filter">
+          <div><i class="fa fa-file-alt"></i></div>
+          <p>Reports</p>
+      </div>
+      
+      <div class="filter">
+          <div><i class="fa fa-landmark"></i></div>
+          <p>Government<br>Data</p>
+      </div>
+
+      <div class="filter">
+        <div><i class="fa fa-seedling"></i></div>
+        <p>Eco-Friendly<br>Sites</p>
+    </div>
+    
+    <div class="filter">
+        <div><i class="fa fa-cloud-showers-heavy"></i></div>
+        <p>Rainwater<br>Harvesting</p>
+    </div>
+
+
+      <div class="contaminated">
+        <div class="form-check-reverse form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Display Contaminated Sites</label>
+        </div>
+      </div>
+<!-- 
+     
+    
+    <div class="filter">
+        <div><i class="fa fa-recycle"></i></div>
+        <p>Water<br>Recycling</p>
+    </div>
+    
+    <div class="filter">
+        <div><i class="fa fa-industry"></i></div>
+        <p>Industrial<br>Waste</p>
+    </div>
+    
+    <div class="filter">
+        <div><i class="fa fa-temperature-high"></i></div>
+        <p>Climate<br>Impact</p>
+    </div>
+      </div> -->
+
+     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
   <!-- First Card -->
   <div class="col">
     <a href="/listings/<%= allListings[5]._id %>" class="listing-link">
@@ -27,7 +194,9 @@
         <img src="/images/4.jpg" class="card-img-top" alt="listing_image" style="height: 20rem;">
         <div class="card-img-overlay"></div>
         <div class="card-body">
-          <b><P class="card-text"><%= allListings[4].title %></P></b>
+          <b><P class="card-text"><%= allListings[4].title %>
+            <span class="water-alert"><i class="fa fa-exclamation-triangle">&nbsp;</i>Unsafe Water</span>
+          </P></b>
       
         </div>
       </div>
@@ -53,7 +222,10 @@
         <div class="card-img-overlay"></div>
         <div class="card-body">
           
-         <b><p class="card-text"><%= allListings[1].title %></p></b>
+         <b><p class="card-text"><%= allListings[1].title %>
+          <span class="water-alert"><i class="fa fa-exclamation-triangle">&nbsp;</i>Unsafe Water</span>
+        
+        </p></b>
         </div>
       </div>
     </a>
@@ -65,7 +237,9 @@
         <div class="card-img-overlay"></div>
         <div class="card-body">
           
-          <b><p class="card-text"><%= allListings[3].title %></p></b>
+          <b><p class="card-text"><%= allListings[3].title %>
+            <span class="water-alert"><i class="fa fa-exclamation-triangle">&nbsp;</i>Unsafe Water</span>
+          </p></b>
         </div>
       </div>
     </a>
@@ -100,7 +274,11 @@
         <img src="/images/8.jpg" class="card-img-top" alt="listing_image" style="height: 20rem"/>
         <div class="card-img-overlay"></div>
         <div class="card-body">
-          <b><p class="card-text"><%= allListings[8].title %></p></b>
+          <b><p class="card-text"><%= allListings[8].title %>
+          
+          
+            <span class="water-alert"><i class="fa fa-exclamation-triangle">&nbsp;</i>Unsafe Water</span>
+          </p></b>
         </div>
       </div>
     </a>
@@ -136,7 +314,11 @@
         <img src="/images/11.jpg" class="card-img-top" alt="listing_image" style="height: 20rem"/>
         <div class="card-img-overlay"></div>
         <div class="card-body">
-          <b><p class="card-text"><%= allListings[11].title %></p></b>
+          <b><p class="card-text"><%= allListings[11].title %>
+          
+          
+            <span class="water-alert"><i class="fa fa-exclamation-triangle">&nbsp;</i>Unsafe Water</span>
+          </p></b>
         </div>
       </div>
     </a>
@@ -160,7 +342,11 @@
         <img src="/images/13.jpg" class="card-img-top" alt="listing_image" style="height: 20rem"/>
         <div class="card-img-overlay"></div>
         <div class="card-body">
-          <b><p class="card-text"><%= allListings[13].title %></p></b>
+          <b><p class="card-text"><%= allListings[13].title %>
+          
+          
+            <span class="water-alert"><i class="fa fa-exclamation-triangle">&nbsp;</i>Unsafe Water</span>
+          </p></b>
         </div>
       </div>
     </a>
@@ -172,7 +358,11 @@
         <img src="/images/14.jpg" class="card-img-top" alt="listing_image" style="height: 20rem"/>
         <div class="card-img-overlay"></div>
         <div class="card-body">
-          <b><p class="card-text"><%= allListings[14].title %></p></b>
+          <b><p class="card-text"><%= allListings[14].title %>
+          
+          
+            <span class="water-alert"><i class="fa fa-exclamation-triangle">&nbsp;</i>Unsafe Water</span>
+          </p></b>
         </div>
       </div>
     </a>
@@ -184,19 +374,42 @@
         <img src="/images/15.jpg" class="card-img-top" alt="listing_image" style="height: 20rem"/>
         <div class="card-img-overlay"></div>
         <div class="card-body">
-          <b><p class="card-text"><%= allListings[15].title %></p></b>
+          <b><p class="card-text"><%= allListings[15].title %>    
+            <span class="water-alert"><i class="fa fa-exclamation-triangle">&nbsp;</i>Unsafe Water</span>
+          
+          </p></b>
+          
         </div>
       </div>
     </a>
   </div>
 
+
+  
+
   
   
   
   </div>
 
 
+<script>
+  let Switch = document.getElementById("flexSwitchCheckDefault");
+  Switch.addEventListener("click", ()=> {
+    let waterAlert = document.getElementsByClassName("water-alert");
+    for(info of waterAlert) {
+      if(info.style.display != "inline") {
+        info.style.display ="inline";
 
+      } else {
+        info.style.display ="none";
+      }
+     
+
+    }
+  });
+
+</script>
     
 
 
